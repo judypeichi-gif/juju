@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juju 珮慈｜活動主持人 × 職涯諮詢師</title>
+<meta name="description" content="Juju 珮慈，擅長溝通表達的活動主持人與職涯諮詢師。提供一對一職涯諮詢、職涯探索工作坊、履歷健檢、模擬面試與長期陪跑，陪想自由業、創業、轉職的青年釐清亮點與下一步。">
+<meta name="author" content="阮珮慈 Juju">
+<meta property="og:title" content="Juju 珮慈｜活動主持人 × 職涯諮詢師">
+<meta property="og:description" content="亮點一直都在，只是還沒被說出口。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%233C7A89'/%3E%3Ctext x='50' y='50' font-size='58' text-anchor='middle' dominant-baseline='central' fill='%23F8F991' font-family='serif'%3EJ%3C/text%3E%3C/svg%3E">
+
+<style>
+/* ============================================================
+   1. Design tokens
+   ============================================================ */
+:root{
+  --blue:      #89CFF0;   /* 品牌主色 淺藍 */
+  --blue-deep: #3C7A89;   /* 深藍 — 文字強調／按鈕 */
+  --gray:      #C7CEDB;   /* 淺灰 — 分隔線／次要 */
+  --yellow:    #F8F991;   /* 黃 — 螢光筆／重點 */
+  --khaki:     #453823;   /* 深卡其 — 主要文字 */
+
+  --paper:     #FCFBF8;
+  --paper-2:   #F5F2EC;
+  --paper-3:   #EDE9E0;
+  --ink:       var(--khaki);
+  --ink-soft:  #6E6047;
+  --ink-mute:  #8C8069;
+  --line:      #DFDACF;
+
+  --serif: "Noto Serif TC", "Songti TC", serif;
+  --sans:  "Noto Sans TC", -apple-system, "Helvetica Neue", sans-serif;
+  --disp:  "Playfair Display", "Noto Serif TC", serif;
+
+  --gut: clamp(20px, 5vw, 72px);
+  --maxw: 1180px;
+  --r: 2px;
+}
+
+/* ============================================================
+   2. Reset & base
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:clamp(15px,1.02vw,16.5px);
+  line-height:1.95;
+  letter-spacing:.02em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.35;letter-spacing:.01em;margin:0}
+p{margin:0 0 1.15em}
+ul,ol{margin:0;padding:0;list-style:none}
+::selection{background:var(--yellow);color:var(--khaki)}
+:focus-visible{outline:2px solid var(--blue-deep);outline-offset:3px}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ============================================================
+   3. Editorial building blocks
+   ============================================================ */
+.eyebrow{
+  font-family:var(--disp);
+  font-size:.72rem; letter-spacing:.3em; text-transform:uppercase;
+  color:var(--ink-mute); display:flex; align-items:center; gap:.85em;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.sec-head{display:flex;align-items:baseline;gap:clamp(14px,2.5vw,34px);border-top:1.5px solid var(--khaki);padding-top:18px;margin-bottom:clamp(34px,5vw,62px)}
+.sec-num{font-family:var(--disp);font-size:clamp(1.1rem,2vw,1.4rem);color:var(--blue-deep);letter-spacing:.04em;flex:none}
+.sec-titles{flex:1;min-width:0}
+.sec-kicker{font-family:var(--disp);font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-bottom:.45em}
+.sec-title{font-size:clamp(1.55rem,4.2vw,2.5rem)}
+.sec-lede{margin:1.1em 0 0;max-width:46ch;color:var(--ink-soft);font-size:.965rem}
+
+section{padding-block:clamp(60px,8.5vw,118px)}
+section[id],#top{scroll-margin-top:clamp(62px,7vw,80px)}
+
+.mark{
+  background:linear-gradient(transparent 58%, var(--yellow) 58%, var(--yellow) 94%, transparent 94%);
+  padding:0 .06em;
+}
+.rule-dot{display:flex;align-items:center;gap:10px;color:var(--gray)}
+.rule-dot::before,.rule-dot::after{content:"";flex:1;height:1px;background:var(--line)}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:var(--sans);font-size:.92rem;font-weight:500;letter-spacing:.06em;
+  padding:.95em 1.65em;border:1.5px solid var(--khaki);border-radius:var(--r);
+  background:var(--khaki);color:var(--paper);
+  transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+  cursor:pointer;
+}
+.btn:hover{background:var(--blue-deep);border-color:var(--blue-deep);transform:translateY(-2px);box-shadow:0 10px 24px -14px rgba(69,56,35,.55)}
+.btn--ghost{background:transparent;color:var(--khaki)}
+.btn--ghost:hover{background:var(--khaki);color:var(--paper);border-color:var(--khaki)}
+.btn .arw{transition:transform .25s ease}
+.btn:hover .arw{transform:translateX(4px)}
+
+/* ============================================================
+   4. Progress bar + header
+   ============================================================ */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--blue-deep);z-index:120;transition:width .1s linear}
+
+#site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(252,251,248,.82);
+  backdrop-filter:saturate(140%) blur(12px);
+  -webkit-backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease, background .3s ease;
+}
+#site-header.stuck{border-bottom-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:clamp(60px,7vw,76px)}
+.brand{display:flex;align-items:baseline;gap:.6em;font-family:var(--serif);font-weight:700;font-size:1.06rem;letter-spacing:.06em}
+.brand span{font-family:var(--disp);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-mute);font-weight:400}
+
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,30px)}
+.nav-links a{
+  position:relative;font-size:.85rem;letter-spacing:.08em;color:var(--ink-soft);
+  padding:4px 0;transition:color .2s ease;
+}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--blue-deep);transition:width .3s ease}
+.nav-links a:hover,.nav-links a.active{color:var(--khaki)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.nav-cta{margin-left:6px;padding:.62em 1.2em;font-size:.82rem;color:var(--paper)}
+.nav-links a.nav-cta:hover{color:var(--paper)}
+.nav-links a.nav-cta::after{display:none}
+
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:var(--r);cursor:pointer;position:relative}
+.burger i{position:absolute;left:12px;right:12px;height:1.5px;background:var(--khaki);transition:transform .3s ease, opacity .25s ease}
+.burger i:nth-child(1){top:16px}
+.burger i:nth-child(2){top:21.5px}
+.burger i:nth-child(3){top:27px}
+body.menu-open .burger i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+body.menu-open .burger i:nth-child(2){opacity:0}
+body.menu-open .burger i:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+
+/* ============================================================
+   5. Hero
+   ============================================================ */
+.hero{padding-top:clamp(110px,16vw,168px);padding-bottom:clamp(50px,7vw,90px);position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;top:-16%;right:-12%;width:min(56vw,620px);aspect-ratio:1;
+  background:radial-gradient(circle at 35% 35%, rgba(137,207,240,.42), rgba(137,207,240,0) 68%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;bottom:8%;left:-10%;width:min(40vw,420px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%, rgba(248,249,145,.4), rgba(248,249,145,0) 70%);
+  pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.32fr .82fr;gap:clamp(28px,5vw,66px);align-items:end}
+
+.hero-kicker{margin-bottom:clamp(20px,3vw,30px)}
+.hero h1{
+  font-size:clamp(2.05rem,6.2vw,3.85rem);
+  font-weight:900;line-height:1.28;letter-spacing:-.01em;
+  margin-bottom:clamp(20px,3vw,28px);
+}
+.hero h1 em{font-style:normal;color:var(--blue-deep)}
+.hero-lede{font-size:clamp(.97rem,1.35vw,1.09rem);max-width:40ch;color:var(--ink-soft)}
+.hero-lede strong{font-weight:500;color:var(--khaki)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3.5vw,34px)}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:10px 0;margin-top:clamp(32px,4.5vw,46px);
+  border-top:1px solid var(--line);padding-top:18px;
+}
+.hero-meta li{
+  font-size:.79rem;letter-spacing:.06em;color:var(--ink-mute);
+  padding-right:14px;margin-right:14px;border-right:1px solid var(--line);line-height:1.6;
+}
+.hero-meta li:last-child{border-right:0;margin-right:0;padding-right:0}
+
+/* portrait */
+.portrait{position:relative}
+.portrait-frame{
+  position:relative;aspect-ratio:3/4;border:1px solid var(--khaki);
+  background:linear-gradient(155deg,var(--blue) 0%, #B9E2F6 42%, var(--paper-2) 100%);
+  display:grid;place-items:center;overflow:hidden;
+}
+.portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portrait-mono{font-family:var(--serif);font-weight:900;font-size:clamp(4rem,11vw,7rem);color:rgba(60,122,137,.5);letter-spacing:.1em;user-select:none}
+.portrait-tag{
+  position:absolute;bottom:-1px;left:-1px;right:-1px;
+  background:var(--khaki);color:var(--paper);
+  font-family:var(--disp);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  padding:.85em 1.1em;display:flex;justify-content:space-between;gap:10px;
+}
+.portrait-note{margin-top:12px;font-size:.74rem;color:var(--ink-mute);letter-spacing:.04em;line-height:1.7}
+
+/* ticker */
+.ticker{
+  border-block:1.5px solid var(--khaki);background:var(--khaki);color:var(--paper);
+  overflow:hidden;white-space:nowrap;padding-block:.85em;
+}
+.ticker-track{display:inline-flex;gap:0;animation:slide 34s linear infinite;will-change:transform}
+.ticker-track span{
+  font-family:var(--disp);font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;
+  padding-inline:1.3em;opacity:.92;
+}
+.ticker-track span::after{content:"◆";margin-left:1.6em;color:var(--yellow);font-size:.6em;vertical-align:middle}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+/* ============================================================
+   6. About
+   ============================================================ */
+.pain{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.pain-head{max-width:44ch;margin-bottom:clamp(30px,4.5vw,46px)}
+.pain-head h2{font-size:clamp(1.4rem,3.6vw,2.1rem);margin-bottom:.7em}
+.pain-head p{color:var(--ink-soft);font-size:.95rem;margin:0}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,238px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.pain-card{background:var(--paper);padding:clamp(22px,3vw,30px)}
+.pain-card q{
+  display:block;font-family:var(--serif);font-weight:500;
+  font-size:clamp(1rem,1.5vw,1.12rem);line-height:1.75;quotes:"「" "」";
+  margin-bottom:.8em;
+}
+.pain-card p{font-size:.86rem;color:var(--ink-mute);margin:0;line-height:1.85}
+.pain-foot{
+  margin-top:clamp(28px,4vw,40px);padding:clamp(20px,3vw,28px);
+  border:1.5px solid var(--khaki);background:var(--paper);
+  font-family:var(--serif);font-size:clamp(1.02rem,1.9vw,1.25rem);line-height:1.8;
+}
+
+.about-grid{display:grid;grid-template-columns:1fr .78fr;gap:clamp(34px,5vw,70px)}
+.about-body{max-width:56ch}
+.about-body>p:first-of-type::first-letter{
+  float:left;font-family:var(--serif);font-weight:900;font-size:3.5em;line-height:.82;
+  margin:.08em .12em 0 0;color:var(--blue-deep);
+}
+.about-body p{font-size:1rem}
+.about-pull{
+  border-left:3px solid var(--blue);padding:.4em 0 .4em 1.2em;margin:2em 0;
+  font-family:var(--serif);font-size:clamp(1.05rem,2vw,1.3rem);line-height:1.8;color:var(--khaki);
+}
+
+.timeline{border-top:1.5px solid var(--khaki);padding-top:20px}
+.timeline-label{font-family:var(--disp);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:1.6em;display:block}
+.timeline li{display:grid;grid-template-columns:auto 1fr;gap:16px;padding-bottom:26px;position:relative}
+.timeline li::before{content:"";position:absolute;left:5.5px;top:16px;bottom:0;width:1px;background:var(--line)}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:last-child::before{display:none}
+.timeline .dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--blue-deep);background:var(--paper);margin-top:7px;position:relative;z-index:1}
+.timeline li.now .dot{background:var(--yellow);border-color:var(--khaki)}
+.timeline .yr{font-family:var(--disp);font-size:.76rem;letter-spacing:.14em;color:var(--blue-deep);display:block}
+.timeline .tl-t{font-family:var(--serif);font-weight:700;font-size:1rem;display:block;margin:.15em 0 .2em}
+.timeline .tl-d{font-size:.84rem;color:var(--ink-mute);line-height:1.8}
+
+/* ============================================================
+   7. Service
+   ============================================================ */
+.service{background:var(--khaki);color:var(--paper-2)}
+.service .sec-head{border-top-color:rgba(252,251,248,.45)}
+.service .sec-num{color:var(--blue)}
+.service .sec-kicker,.service .sec-lede{color:rgba(252,251,248,.66)}
+.service .sec-title{color:var(--paper)}
+
+.svc-list{display:grid;gap:1px;background:rgba(252,251,248,.22);border:1px solid rgba(252,251,248,.22)}
+.svc{
+  background:var(--khaki);padding:clamp(22px,3.2vw,34px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2.6vw,32px);align-items:start;
+  transition:background .3s ease;
+}
+.svc:hover{background:#3B3020}
+.svc-n{font-family:var(--disp);font-size:clamp(1.1rem,2vw,1.5rem);color:var(--blue);line-height:1.2}
+.svc h3{font-size:clamp(1.12rem,2.2vw,1.4rem);color:var(--paper);margin-bottom:.55em}
+.svc h3 small{display:block;font-family:var(--disp);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(137,207,240,.85);font-weight:400;margin-bottom:.6em}
+.svc p{color:rgba(252,251,248,.76);font-size:.925rem;margin:0}
+.svc p.svc-for{margin-top:1.1em;font-size:.8rem;color:var(--yellow);letter-spacing:.04em}
+
+.method{margin-top:clamp(46px,6vw,78px);display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(26px,4vw,54px);align-items:start}
+.method h3{font-size:clamp(1.25rem,2.6vw,1.65rem);color:var(--paper);margin-bottom:.7em}
+.method>div>p{color:rgba(252,251,248,.7);font-size:.93rem;margin:0}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.chip{border:1px solid rgba(252,251,248,.28);padding:18px 20px}
+.chip b{display:block;font-family:var(--serif);font-size:1.02rem;color:var(--blue);margin-bottom:.4em}
+.chip span{font-size:.82rem;color:rgba(252,251,248,.7);line-height:1.8}
+
+.gains{margin-top:clamp(44px,6vw,72px);border-top:1px solid rgba(252,251,248,.28);padding-top:clamp(28px,4vw,40px)}
+.gains-label{font-family:var(--disp);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,251,248,.6);display:block;margin-bottom:1.5em}
+.gains ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:clamp(18px,3vw,32px)}
+.gains li{display:flex;gap:12px;font-size:.93rem;color:rgba(252,251,248,.86);line-height:1.85}
+.gains li::before{content:"✓";color:var(--yellow);font-size:.95em;flex:none;line-height:1.85}
+
+/* ============================================================
+   8. Process
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,208px),1fr));gap:clamp(20px,2.4vw,26px)}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(5,1fr)}}
+.step{border-top:1.5px solid var(--khaki);padding-top:20px;position:relative}
+.step-n{font-family:var(--disp);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-deep);display:block;margin-bottom:.9em}
+.step h3{font-size:1.06rem;margin-bottom:.6em}
+.step p{font-size:.86rem;color:var(--ink-soft);margin:0;line-height:1.88}
+.step p.step-tool{margin-top:1.1em;font-size:.76rem;color:var(--ink-mute);letter-spacing:.03em;border-top:1px dashed var(--line);padding-top:.9em}
+.step-tool b{color:var(--blue-deep);font-weight:500}
+
+.process-note{
+  margin-top:clamp(36px,5vw,58px);background:var(--blue);color:var(--khaki);
+  padding:clamp(24px,3.6vw,38px);display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,3vw,30px);align-items:center;
+}
+.process-note .pn-icon{font-family:var(--disp);font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1}
+.process-note p{margin:0;font-family:var(--serif);font-size:clamp(.98rem,1.8vw,1.15rem);line-height:1.8}
+
+/* ============================================================
+   9. Trust
+   ============================================================ */
+.trust{background:var(--paper-2);border-block:1px solid var(--line)}
+.quotes{columns:3;column-gap:clamp(18px,2.4vw,26px)}
+@media (max-width:1000px){.quotes{columns:2}}
+@media (max-width:640px){.quotes{columns:1}}
+.qcard{
+  break-inside:avoid;background:var(--paper);border:1px solid var(--line);
+  padding:clamp(20px,2.6vw,28px);margin-bottom:clamp(18px,2.4vw,26px);
+  transition:border-color .3s ease, box-shadow .3s ease;
+}
+.qcard:hover{border-color:var(--blue-deep);box-shadow:0 14px 30px -24px rgba(69,56,35,.6)}
+.qmark{font-family:var(--disp);font-size:2.3rem;line-height:.6;color:var(--blue);display:block;margin-bottom:.35em}
+.qpull{font-family:var(--serif);font-weight:500;font-size:clamp(.99rem,1.5vw,1.09rem);line-height:1.85;margin:0 0 .9em}
+.qbody{font-size:.87rem;color:var(--ink-soft);line-height:1.95}
+.qbody p{margin:0 0 .85em}
+.qbody p:last-child{margin-bottom:0}
+.qfold{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.qfold.open{max-height:1800px}
+.qmore{
+  background:none;border:0;padding:0;margin-top:.6em;cursor:pointer;
+  font-family:var(--sans);font-size:.79rem;letter-spacing:.1em;color:var(--blue-deep);
+  border-bottom:1px solid var(--blue);line-height:1.9;
+}
+.qmore:hover{color:var(--khaki);border-color:var(--khaki)}
+.qwho{display:flex;align-items:center;gap:.7em;margin-top:1.3em;padding-top:1em;border-top:1px solid var(--line)}
+.qwho b{font-family:var(--serif);font-size:.93rem;font-weight:700}
+.qwho span{font-size:.75rem;color:var(--ink-mute);letter-spacing:.04em}
+.qwho .av{
+  width:30px;height:30px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:var(--blue);color:var(--khaki);font-family:var(--serif);font-size:.82rem;font-weight:700;
+}
+
+/* ============================================================
+   10. Contact
+   ============================================================ */
+.contact{position:relative;overflow:hidden}
+.contact::before{
+  content:"";position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:min(90vw,760px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%, rgba(137,207,240,.34), rgba(137,207,240,0) 66%);
+  pointer-events:none;
+}
+.contact-body{position:relative;text-align:center}
+.contact-inner{max-width:720px;margin-inline:auto}
+.contact h2{font-size:clamp(1.7rem,4.6vw,2.9rem);margin-bottom:.7em;line-height:1.32}
+.contact-lede{color:var(--ink-soft);font-size:1rem;margin:0 auto;max-width:34em}
+.eyebrow--center{justify-content:center}
+.eyebrow--center::before{content:"";flex:1;height:1px;background:var(--line)}
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  margin-top:clamp(34px,5vw,54px);text-align:left;
+}
+.ccard{background:var(--paper);padding:clamp(22px,3vw,30px);display:block;transition:background .3s ease}
+.ccard:hover{background:var(--paper-2)}
+.ccard span{font-family:var(--disp);font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-mute);display:block;margin-bottom:.9em}
+.ccard b{font-family:var(--serif);font-size:clamp(1rem,1.7vw,1.14rem);font-weight:700;display:block;word-break:break-all;line-height:1.6}
+.ccard em{font-style:normal;font-size:.8rem;color:var(--ink-mute);display:block;margin-top:.6em}
+.contact-actions{margin-top:clamp(30px,4vw,44px);display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.contact-fine{margin:clamp(26px,3.5vw,38px) auto 0;max-width:560px;font-size:.8rem;color:var(--ink-mute);line-height:1.9}
+
+#site-footer{background:var(--khaki);color:rgba(252,251,248,.66);padding-block:clamp(36px,5vw,54px);font-size:.8rem}
+.foot{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot-brand{font-family:var(--serif);color:var(--paper);font-size:1rem;font-weight:700;letter-spacing:.06em}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap}
+.foot-links a{letter-spacing:.06em;border-bottom:1px solid transparent;transition:border-color .2s ease,color .2s ease}
+.foot-links a:hover{color:var(--paper);border-bottom-color:var(--blue)}
+
+/* ============================================================
+   11. Reveal animation
+   ============================================================ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   12. Responsive
+   ============================================================ */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;align-items:start}
+  .portrait{max-width:330px;margin-top:8px}
+  .about-grid{grid-template-columns:1fr}
+  .method{grid-template-columns:1fr}
+  .quotes{columns:2}
+}
+@media (max-width:820px){
+  .nav-links{
+    position:fixed;inset:0 0 auto;top:0;
+    flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;
+    height:100vh;height:100dvh;padding:clamp(20px,5vw,72px);
+    background:var(--paper);
+    transform:translateY(-100%);transition:transform .45s cubic-bezier(.4,0,.2,1);
+    z-index:-1;
+  }
+  body.menu-open .nav-links{transform:none}
+  .nav-links a{font-size:1.45rem;font-family:var(--serif);font-weight:700;color:var(--khaki);padding:.5em 0}
+  .nav-links a::after{display:none}
+  .nav-cta{margin:1.2em 0 0;font-size:.9rem;padding:.9em 1.6em}
+  .burger{display:block;z-index:2}
+  body.menu-open{overflow:hidden}
+}
+@media (max-width:560px){
+  .sec-head{flex-direction:column;gap:10px}
+  .svc{grid-template-columns:1fr;gap:12px}
+  .process-note{grid-template-columns:1fr;gap:14px}
+  .hero-meta li{border-right:0;padding-right:0;margin-right:0;width:100%}
+  .hero-meta li+li{border-top:1px dashed var(--line);padding-top:8px}
+  .about-body>p:first-of-type::first-letter{font-size:3em}
+  .eyebrow{font-size:.66rem;letter-spacing:.16em}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.4rem)}
+}
+
+@media print{
+  #site-header,#progress,.ticker,.qmore,.burger{display:none!important}
+  body{background:#fff;color:#000}
+  .service,#site-footer{background:#fff;color:#000}
+  .rv{opacity:1;transform:none}
+  .qfold{max-height:none!important}
+}
+</style>
+</head>
+<body>
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ========================= HEADER ========================= -->
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="#top" class="brand">Juju 珮慈 <span>Career &amp; Host</span></a>
+
+    <nav class="nav-links" id="navlinks" aria-label="主要導覽">
+      <a href="#about">關於我</a>
+      <a href="#service">服務</a>
+      <a href="#process">流程</a>
+      <a href="#trust">學員回饋</a>
+      <a href="#contact">聯絡</a>
+      <a href="#contact" class="btn nav-cta">預約諮詢 <span class="arw">→</span></a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="navlinks">
+      <i></i><i></i><i></i>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow hero-kicker">Career Consulting × Event Hosting</p>
+
+      <h1>亮點一直都在。<br>你只是還沒找到，<br><em>把它說出口的方法。</em></h1>
+
+      <p class="hero-lede">
+        我是 <strong>Juju 珮慈</strong>。活動主持人，也是職涯諮詢師。
+        你正想走向<strong>自由業、創業、轉職</strong>——
+        但經歷散落一地，不知道怎麼收。
+        我陪你把它們整理成<span class="mark">一份說得出口的方向</span>，
+        然後，真的踏出第一步。
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn">預約一對一諮詢 <span class="arw">→</span></a>
+        <a href="#process" class="btn btn--ghost">先看看怎麼進行</a>
+      </div>
+
+      <ul class="hero-meta">
+        <li>政大新聞系</li>
+        <li>人才培育 4 年</li>
+        <li>職游 CNC 職涯導航諮詢師</li>
+        <li>主持經驗 7 年+</li>
+      </ul>
+    </div>
+
+    <aside class="portrait">
+      <div class="portrait-frame">
+        <!-- 想換成自己的照片：把下面這行註解解開，並把 src 換成你的圖片路徑或網址 -->
+        <!-- <img src="juju.jpg" alt="Juju 珮慈"> -->
+        <span class="portrait-mono" aria-hidden="true">珮慈</span>
+        <div class="portrait-tag"><span>Juju</span><span>阮珮慈</span></div>
+      </div>
+      <p class="portrait-note">此處預留主視覺照片位置，建議 3:4 直式、半身、自然光。</p>
+    </aside>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>一對一職涯諮詢</span><span>職涯探索工作坊</span><span>履歷健檢</span><span>模擬面試</span><span>長期陪跑</span><span>活動主持</span>
+    <span>一對一職涯諮詢</span><span>職涯探索工作坊</span><span>履歷健檢</span><span>模擬面試</span><span>長期陪跑</span><span>活動主持</span>
+  </div>
+</div>
+
+<!-- ========================= ABOUT ========================= -->
+<section id="about">
+
+  <div class="pain" style="padding:0;border:0;background:transparent">
+    <div class="wrap">
+      <header class="sec-head rv">
+        <span class="sec-num">01</span>
+        <div class="sec-titles">
+          <span class="sec-kicker">About</span>
+          <h2 class="sec-title">先說說，你現在可能卡在哪裡</h2>
+          <p class="sec-lede">這些話，我在諮詢室裡聽過太多次了。如果你也想過，那你來對地方了。</p>
+        </div>
+      </header>
+
+      <ul class="pain-grid rv">
+        <li class="pain-card">
+          <q>我好像沒什麼特別的能力</q>
+          <p>能力其實都在。只是沒被盤點過，沒被命名過。命名了，才算數。</p>
+        </li>
+        <li class="pain-card">
+          <q>經歷很雜，不知道怎麼串起來</q>
+          <p>雜，代表你嘗試得夠多。缺的只是一條主線——那正是我最擅長接起來的部分。</p>
+        </li>
+        <li class="pain-card">
+          <q>對還沒發生的未來很恐懼</q>
+          <p>恐懼通常來自看不清楚。資訊補齊了，害怕自然會縮小。</p>
+        </li>
+        <li class="pain-card">
+          <q>知道想改變，但不敢跨第一步</q>
+          <p>我們把目標拆成很小很小的行動。小到，你會願意走出第一步。</p>
+        </li>
+      </ul>
+
+      <p class="pain-foot rv">
+        我做的事，其實只有一件。<br>
+        陪你把「<span class="mark">我不知道自己有什麼</span>」，換成「<span class="mark">我知道要往哪裡去，也說得出來為什麼</span>」。
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap about-grid" style="margin-top:clamp(56px,8vw,104px)">
+    <div class="about-body rv">
+      <p class="eyebrow" style="margin-bottom:1.8em">My Story</p>
+      <p>
+        從政治大學新聞系畢業後，我的第一份工作是記者。那幾年我學會的事，是怎麼在短時間內聽懂一個陌生人的故事，
+        再把它整理成別人願意讀完的樣子——這件事，後來成了我做職涯諮詢的核心技術。
+      </p>
+      <p>
+        接著我轉身走進社會創新領域，投入<strong>人才培育工作四年</strong>，帶著一群人從「我想做點什麼」走到「我真的做到了」。
+        我看過太多人在起點前猶豫。他們缺的，是一雙陪著攤開資源的眼睛——能力，其實早就夠了。
+      </p>
+
+      <blockquote class="about-pull">
+        我相信每個人手上的資源，都比自己以為的多。<br>
+        我的工作，是幫你把它們看見、排好、說出來。
+      </blockquote>
+
+      <p>
+        2026 年我考取<strong>職游 CNC 職涯導航諮詢師</strong>證照，把人才培育的經驗與溝通表達的專長正式結合。
+        現在的我是擁有<strong>活動主持人</strong>與<strong>職涯諮詢師</strong>雙專業的自由業工作者——
+        一邊在舞台上幫別人把話說得清楚，一邊在諮詢室裡幫你把自己說得清楚。
+      </p>
+      <p>
+        也因為我自己正走在自由業這條路上，我很清楚那種沒有標準答案的不安。
+        所以我不會給你一份正確答案，我會陪你長出判斷的能力。
+      </p>
+    </div>
+
+    <aside class="rv">
+      <div class="timeline">
+        <span class="timeline-label">Career Path</span>
+        <ul>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <span class="yr">Start</span>
+              <span class="tl-t">政大新聞系</span>
+              <span class="tl-d">訓練出訪談、資訊彙整與敘事的底子。</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <span class="yr">First Job</span>
+              <span class="tl-t">新聞記者</span>
+              <span class="tl-d">學會快速聽懂一個人，並把重點說給世界聽。</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <span class="yr">4 Years</span>
+              <span class="tl-t">社會創新 × 人才培育</span>
+              <span class="tl-d">陪伴青年從想法走到行動，累積四年培育經驗。</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <span class="yr">2026</span>
+              <span class="tl-t">職游 CNC 職涯導航諮詢師</span>
+              <span class="tl-d">將培育經驗與溝通專長，收攏為專業方法論。</span>
+            </div>
+          </li>
+          <li class="now">
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+              <span class="yr">Now</span>
+              <span class="tl-t">主持人 × 職涯諮詢師</span>
+              <span class="tl-d">雙專業自由業工作者，與你一起面對沒有標準答案的路。</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ========================= SERVICE ========================= -->
+<section id="service" class="service">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <span class="sec-num">02</span>
+      <div class="sec-titles">
+        <span class="sec-kicker">Service</span>
+        <h2 class="sec-title">五種陪你的方式</h2>
+        <p class="sec-lede">從單次釐清到長期陪跑，你可以挑現在最需要的那一種開始。不確定的話，先聊聊也可以。</p>
+      </div>
+    </header>
+
+    <ul class="svc-list rv">
+      <li class="svc">
+        <span class="svc-n">01</span>
+        <div>
+          <h3><small>One-on-one</small>一對一職涯諮詢</h3>
+          <p>用牌卡、量表與結構化訪談，一層一層拆開你的個性、能力與價值觀，把「我不知道我要什麼」變成可以被討論的具體選項。單次即可，也可依議題規劃多次。</p>
+          <p class="svc-for">適合：想轉職、想接案、想做決定卻繞不出來的你</p>
+        </div>
+      </li>
+      <li class="svc">
+        <span class="svc-n">02</span>
+        <div>
+          <h3><small>Workshop</small>團體式職涯探索工作坊</h3>
+          <p>把探索變成一場可以一起玩的練習。在同儕的回饋裡，你常常會聽見自己忽略的特質——那是一對一場景裡不容易出現的鏡子。</p>
+          <p class="svc-for">適合：學校、社團、企業、社群的團體邀約</p>
+        </div>
+      </li>
+      <li class="svc">
+        <span class="svc-n">03</span>
+        <div>
+          <h3><small>Resume</small>履歷健檢</h3>
+          <p>不只是改錯字。我會把你的經歷重新排序、重新命名，讓看履歷的人在十秒內知道你的亮點在哪裡，以及為什麼是你。</p>
+          <p class="svc-for">適合：投了沒回音、或不知道怎麼寫自己的你</p>
+        </div>
+      </li>
+      <li class="svc">
+        <span class="svc-n">04</span>
+        <div>
+          <h3><small>Mock Interview</small>模擬面試</h3>
+          <p>練習怎麼回答，也練習怎麼提問。面試不是只有公司在選你，你也在判斷這間公司值不值得去——我會陪你把雙向的眼光都準備好。</p>
+          <p class="svc-for">適合：面試在即、或容易緊張到說不出重點的你</p>
+        </div>
+      </li>
+      <li class="svc">
+        <span class="svc-n">05</span>
+        <div>
+          <h3><small>Long-term</small>長期陪跑</h3>
+          <p>多次、有節奏的持續對話。從探索、選擇到真正行動，中間會有反覆、會有退縮，我們一起校正方向，把每一次心得累積成你自己的判斷力。</p>
+          <p class="svc-for">適合：正在生涯轉換期，需要一個穩定的陪伴者</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="method rv">
+      <div>
+        <h3>我帶進諮詢室的四件工具</h3>
+        <p>方法可以學，但怎麼把方法用在「你」身上，靠的是這四件事。</p>
+      </div>
+      <ul class="chips">
+        <li class="chip"><b>溝通表達</b><span>把你模糊的感受，翻譯成你自己也認得的語言。</span></li>
+        <li class="chip"><b>資訊彙整</b><span>把散落的經歷、興趣與資源，整理成有結構的地圖。</span></li>
+        <li class="chip"><b>訪談技巧</b><span>問對問題，讓你聽見自己原本沒注意到的答案。</span></li>
+        <li class="chip"><b>同理</b><span>先接住情緒，再談分析。安全了，才說得出真話。</span></li>
+      </ul>
+    </div>
+
+    <div class="gains rv">
+      <span class="gains-label">What You'll Take Away</span>
+      <ul>
+        <li>對職涯有清晰的規劃與期待，不再只憑直覺行動</li>
+        <li>釐清自己的興趣、能力與價值觀，知道哪些是不能妥協的</li>
+        <li>能為自己做出下一步的選擇，也拉出長期的職涯規劃</li>
+        <li>把大目標拆成小行動，讓焦慮變成一件一件做得完的事</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PROCESS ========================= -->
+<section id="process">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <span class="sec-num">03</span>
+      <div class="sec-titles">
+        <span class="sec-kicker">Process</span>
+        <h2 class="sec-title">我們會這樣一步一步走</h2>
+        <p class="sec-lede">循序漸進地拆解自我，從「我是誰」走到「我要做什麼」，最終停在「我下週要做的那一件事」。</p>
+      </div>
+    </header>
+
+    <ol class="steps rv">
+      <li class="step">
+        <span class="step-n">Step 01</span>
+        <h3>先聊聊，確認方向</h3>
+        <p>談你現在的處境與最想解決的問題，一起判斷適合單次諮詢、工作坊，還是長期陪跑。不合適我也會直說。</p>
+        <p class="step-tool">產出：<b>諮詢主軸與次數建議</b></p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 02</span>
+        <h3>認識自己：個性與興趣</h3>
+        <p>透過性格牌卡、興趣量表與周哈里窗，第一次用客觀的角度看自己的特質，包含那些你一直忽略的部分。</p>
+        <p class="step-tool">常用工具：<b>六大性格牌卡、興趣量表、周哈里窗</b></p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 03</span>
+        <h3>盤點現實：軟硬實力</h3>
+        <p>把能力、經歷與手上的資源全部攤開來看。你會發現自己擁有的，比想像中多，也更容易被說出來。</p>
+        <p class="step-tool">常用工具：<b>職能盤點、職業牌卡</b></p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 04</span>
+        <h3>對焦價值觀，收斂方向</h3>
+        <p>挑出真正在意的價值，看它如何影響你的職涯與生活。也會一起指出矛盾的地方——那通常是關鍵所在。</p>
+        <p class="step-tool">常用工具：<b>價值觀盤點表、奧德賽計畫</b></p>
+      </li>
+      <li class="step">
+        <span class="step-n">Step 05</span>
+        <h3>設計行動，然後真的去做</h3>
+        <p>把方向拆成小到不會焦慮的行動，每次結束都留下「收穫、想法上的改變、接下來要做的行動」三個紀錄，趁熱寫下來。</p>
+        <p class="step-tool">產出：<b>行動清單與個人職涯錨點</b></p>
+      </li>
+    </ol>
+
+    <div class="process-note rv">
+      <span class="pn-icon" aria-hidden="true">&ldquo;</span>
+      <p>思索與規劃之後，最重要的還是<strong>行動</strong>。<br>所以每一次諮詢，都會帶著一個你真的做得到的下一步離開。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TRUST ========================= -->
+<section id="trust" class="trust">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <span class="sec-num">04</span>
+      <div class="sec-titles">
+        <span class="sec-kicker">Trust</span>
+        <h2 class="sec-title">他們走過之後，這樣說</h2>
+        <p class="sec-lede">以下都是實際諮詢與工作坊參與者的回饋，經本人同意後分享（部分依意願匿名）。</p>
+      </div>
+    </header>
+
+    <div class="quotes rv">
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">現在對於自己的決定有時候還是會怕怕的，不過沒有那麼嚴重了，要更相信自己能做到！自己是自己的港口。</p>
+        <div class="qbody">
+          <div class="qfold" id="q-douhua">
+            <p>六月開始為期六次與 Ju 的線上諮詢，剛好是一個生涯轉換期（一定是宇宙有安排，來得很是時候）。決定要去日本打工度假、跟現在的公司提離職，有一點猶豫和不捨，但同時也要考量這個決定是要讓自己不留遺憾。這段有 Ju 的陪伴獲得了力量，希望未來可以轉換成自己的力量。</p>
+            <p>我也一邊在觀摩 Ju 的角色：像朋友一樣的聊天讓我很輕鬆自在，聆聽我帶有情緒的分享，還能保持理性分析，還要找很多資源管道提供參考。我開始思考「成為一位陪伴者」的模樣是什麼呢？一切的源頭要由自己出發，「我好」才有力量支撐自己、陪伴他人。</p>
+            <p>自我效能感不足延伸了許多恐懼，一直是我沒有自信的課題，不自覺地羨慕他人擁有的，總覺得能力不夠好，要補足 A 又探索 B，分散了努力的成本，搞得自己很疲憊。但沒有那麼糟糕的，要有意識地不對自己太嚴格：找人討論、換位思考（把自己當朋友看待），以及長期顧問／教練的陪伴，提醒自己現在擁有什麼——有沒有可能現在已經很好了？</p>
+            <p>透過興趣量表、價值觀、周哈里窗、職業牌卡的互動，慢慢打開想像和眼界，原來方法很多、世界上的選擇很多，探索歷程中發現自己已有的資源也比想像中多。每次諮詢結束要打鐵趁熱寫心得，有「收穫、想法上的改變、接下來會做的行動」這三個問題，很喜歡，也可以套用在其他吸收資訊的時候。相信思索、規劃之後最重要的還是「行動」。現在確定了最有熱忱的方向，也已經規劃了藍圖，那就作為整體生涯規劃的核心錨點，GO！</p>
+          </div>
+          <button class="qmore" type="button" data-fold="q-douhua" aria-expanded="false">展開完整心得 ＋</button>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">豆</span><b>豆花</b><span>六次長期陪跑</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">循序漸進地拆解自我，使當時較混亂的思緒可以得到一點方向。</p>
+        <div class="qbody">
+          <div class="qfold" id="q-hsiao">
+            <p>諮詢過程使用過的工具對現階段的我來說皆受益良多，從個性、價值觀上的探索，到切入主軸的職涯問題。在第一次練習中，讓我認真首次以客觀的角度發現自己的特質；接著職能相關軟硬實力的練習則是更進一步探討現實面，也從中持續反思自己的價值觀、待人處事邏輯以及對自我的期許，並從拆解中得到職涯適性的結果。</p>
+            <p>最後接續前幾次的成果，挖掘本質的價值觀對職涯、生活的影響，甚至是內心深處的期許。經過一個多月的合作，獲得了許多以前的自己不一定會發覺的事項。</p>
+            <p>另外在溝通過程中，因為自己較為悲觀、沒自信、過度謙虛的思考習慣，諮詢師會利用正向的思考邏輯去引導、鼓勵，希望藉此調整既有的思考模式並逐步建立自信，在未來不論是生活還是職涯上都更有幫助。</p>
+          </div>
+          <button class="qmore" type="button" data-fold="q-hsiao" aria-expanded="false">展開完整心得 ＋</button>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">蕭</span><b>蕭亦宸</b><span>一個多月多次諮詢</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">不是只有公司在面試我們，我們也在選擇公司。</p>
+        <div class="qbody">
+          <div class="qfold" id="q-li">
+            <p>印象最深刻的是珮慈分享有關怎麼從面試問問題的環節，看見公司可能會有的狀況，提前為不喜歡的工作環境或模式避雷。</p>
+            <p>在工具上整體而言都蠻有感的，因為過去比較多是依靠直覺或個人感受去做覺察，使用工具會更有統整性，也更有方向感。最顯著的是價值觀盤點的表格，那天之後會一直思考自己的價值觀；還有把目標拆成一小塊一小塊的部分，也很大程度幫助我遠離焦慮。</p>
+          </div>
+          <button class="qmore" type="button" data-fold="q-li" aria-expanded="false">展開完整心得 ＋</button>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">李</span><b>李怡潔</b><span>職涯諮詢</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">珮慈可以很快速地透過我的選擇，歸納出我在意的職涯元素是什麼，超級準！</p>
+        <div class="qbody">
+          <div class="qfold" id="q-huang">
+            <p>覺得最有趣的是透過六大性格牌卡和職業牌卡。像是我對於動物和小孩的熱情，反映出我在意職場環境單純——這是我自己過去沒有這樣聯想過的。</p>
+            <p>珮慈把兩個工具的結果具體整理出我的職涯方向，並且在之後讓我透過小行動更了解不同的方向，對行動力不足的我幫助很大！</p>
+          </div>
+          <button class="qmore" type="button" data-fold="q-huang" aria-expanded="false">展開完整心得 ＋</button>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">黃</span><b>黃詩涵</b><span>牌卡職涯探索</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">奧德賽計畫幫助我了解職涯的不同可能，並透過規劃與記錄的過程，讓我更清楚下一步行動的方向。</p>
+        <footer class="qwho"><span class="av" aria-hidden="true">匿</span><b>匿名分享</b><span>職涯探索</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">能從談話中點出我自身矛盾的地方，例如自己忽視的特質。</p>
+        <div class="qbody">
+          <p style="margin:0">價值觀挑選與價值行動，具體幫助我更理解自己，且從小小的練習開始，幫助我建立更有目標的職涯方向。</p>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">匿</span><b>匿名分享</b><span>價值觀工作</span></footer>
+      </article>
+
+      <article class="qcard">
+        <span class="qmark" aria-hidden="true">&ldquo;</span>
+        <p class="qpull">奧德賽工具讓我對「美好生活」的想像更加具象化。</p>
+        <div class="qbody">
+          <p style="margin:0">立體且直觀地使我必須做出判斷，也能藉此表格審視自己傾向的職業選擇。</p>
+        </div>
+        <footer class="qwho"><span class="av" aria-hidden="true">匿</span><b>匿名分享</b><span>奧德賽計畫</span></footer>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CONTACT ========================= -->
+<section id="contact" class="contact">
+  <div class="wrap contact-body">
+    <div class="contact-inner">
+      <p class="eyebrow eyebrow--center" style="margin-bottom:1.6em"><span style="flex:none">05 &nbsp;/&nbsp; Contact</span></p>
+      <h2>還在猶豫，<br>就是最適合開始聊的時候。</h2>
+      <p class="contact-lede">
+        不需要準備好答案才能來。你只要帶著現在的困惑，
+        我們一起把它<span class="mark">拆開來看</span>。
+      </p>
+    </div>
+
+    <div class="cards">
+        <a class="ccard" href="mailto:judy.peichi@gmail.com?subject=%E8%81%B7%E6%B6%AF%E8%AB%AE%E8%A9%A2%E9%A0%90%E7%B4%84%E8%A9%A2%E5%95%8F&body=%E5%98%BF%20Juju%EF%BC%8C%E6%88%91%E6%83%B3%E8%A9%A2%E5%95%8F%E8%81%B7%E6%B6%AF%E8%AB%AE%E8%A9%A2%EF%BC%9A%0A%0A%E2%80%A2%20%E7%9B%AE%E5%89%8D%E7%9A%84%E8%81%B7%E6%B6%AF%E7%8B%80%E6%B3%81%EF%BC%9A%0A%E2%80%A2%20%E6%9C%80%E6%83%B3%E8%A7%A3%E6%B1%BA%E7%9A%84%E5%95%8F%E9%A1%8C%EF%BC%9A%0A%E2%80%A2%20%E6%9C%9F%E5%BE%85%E7%9A%84%E6%9C%8D%E5%8B%99%EF%BC%88%E4%B8%80%E5%B0%8D%E4%B8%80%EF%BC%8F%E5%B7%A5%E4%BD%9C%E5%9D%8A%EF%BC%8F%E5%B1%A5%E6%AD%B7%EF%BC%8F%E6%A8%A1%E6%93%AC%E9%9D%A2%E8%A9%A6%EF%BC%8F%E9%99%AA%E8%B7%91%EF%BC%89%EF%BC%9A%0A%E2%80%A2%20%E6%96%B9%E4%BE%BF%E7%9A%84%E6%99%82%E9%96%93%EF%BC%9A%0A">
+          <span>Email</span>
+          <b>judy.peichi@gmail.com</b>
+          <em>點擊即可帶入預約範本，最快的聯絡方式</em>
+        </a>
+        <a class="ccard" href="https://www.instagram.com/juju_career_host_/" target="_blank" rel="noopener noreferrer">
+          <span>Instagram</span>
+          <b>@juju_career_host_</b>
+          <em>日常的職涯觀察與主持現場，也可以直接私訊我</em>
+        </a>
+        <div class="ccard">
+          <span>Services</span>
+          <b>諮詢 · 工作坊 · 主持邀約</b>
+          <em>團體工作坊與活動主持邀約，歡迎來信洽談合作</em>
+        </div>
+      </div>
+
+      <div class="contact-actions">
+        <a href="mailto:judy.peichi@gmail.com?subject=%E8%81%B7%E6%B6%AF%E8%AB%AE%E8%A9%A2%E9%A0%90%E7%B4%84%E8%A9%A2%E5%95%8F" class="btn">寄信給我 <span class="arw">→</span></a>
+        <a href="https://www.instagram.com/juju_career_host_/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">到 IG 看看我</a>
+      </div>
+
+      <p class="contact-fine">
+        來信請簡單說明你目前的狀況與想解決的問題，我會在兩到三個工作日內回覆你，並一起確認適合的服務方式。
+      </p>
+  </div>
+</section>
+
+</main>
+
+<footer id="site-footer">
+  <div class="wrap foot">
+    <div>
+      <div class="foot-brand">Juju 珮慈 ・ 阮珮慈</div>
+      <div style="margin-top:.4em">活動主持人 × 職涯諮詢師｜職游 CNC 職涯導航諮詢師</div>
+    </div>
+    <nav class="foot-links" aria-label="頁尾導覽">
+      <a href="#about">關於我</a>
+      <a href="#service">服務</a>
+      <a href="#process">流程</a>
+      <a href="#trust">學員回饋</a>
+      <a href="mailto:judy.peichi@gmail.com">Email</a>
+      <a href="https://www.instagram.com/juju_career_host_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </nav>
+    <div style="width:100%;border-top:1px solid rgba(252,251,248,.2);padding-top:18px;font-size:.74rem;letter-spacing:.06em">
+      © <span id="yr">2026</span> Juju 珮慈. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- 1. 年份 ---------- */
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------- 2. 手機選單 ---------- */
+  var burger = document.getElementById('burger');
+  var navlinks = document.getElementById('navlinks');
+
+  function closeMenu() {
+    document.body.classList.remove('menu-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', '開啟選單');
+  }
+
+  burger.addEventListener('click', function () {
+    var open = document.body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
+  });
+
+  navlinks.addEventListener('click', function (e) {
+    if (e.target.closest('a')) closeMenu();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) closeMenu();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 820) closeMenu();
+  });
+
+  /* ---------- 3. 捲動進度條 + header 狀態 ---------- */
+  var bar = document.getElementById('progress');
+  var header = document.getElementById('site-header');
+  var ticking = false;
+
+  function onScroll() {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (st / h) * 100 : 0) + '%';
+    header.classList.toggle('stuck', st > 12);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- 4. 進場動畫 ---------- */
+  var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- 5. 心得展開／收合 ---------- */
+  document.querySelectorAll('.qmore').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = document.getElementById(btn.getAttribute('data-fold'));
+      if (!panel) return;
+      var open = panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? '收合心得 －' : '展開完整心得 ＋';
+    });
+  });
+
+  /* ---------- 6. 導覽 active 狀態 ---------- */
+  var sections = Array.prototype.slice.call(
+    document.querySelectorAll('section[id]')
+  );
+  var links = Array.prototype.slice.call(
+    document.querySelectorAll('.nav-links a[href^="#"]:not(.nav-cta)')
+  );
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
